@@ -2,34 +2,64 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Sobre mí - Seguridad Ciudadana App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Citizen App - Sobre mí</title>
+  <!-- Vinculación a hoja de estilos -->
   <link rel="stylesheet" href="../styles/styles.css">
+  <!-- Tipografía externa con fallback -->
+  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Sobre mí</h1>
-    <nav>
-      <ul>
+  <!-- Encabezado -->
+  <header class="header-principal">
+    <nav class="nav-bar">
+      <div class="logo">Citizen App</div>
+      <ul class="nav-list">
         <li><a href="../index.html">Inicio</a></li>
+        <li><a href="sobre-mi.html">Sobre mí</a></li>
         <li><a href="proyectos.html">Proyectos</a></li>
-        <li><a href="faq.html">FAQ</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
         <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="faq.html">FAQ</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>Nuestra misión</h2>
-      <p>La aplicación busca fortalecer la seguridad ciudadana mediante la participación activa de los vecinos, ofreciendo herramientas innovadoras como mapas interactivos de sucesos y acceso directo a números de emergencia.</p>
+  <!-- Contenido principal -->
+  <main class="main-contenido">
+    <section class="seccion-sobre-mi">
+      <h1 class="titulo-principal">Sobre mí</h1>
+      <p class="texto-intro">
+        Soy el desarrollador de este proyecto inspirado en Citizen App, con el objetivo de mejorar la seguridad comunitaria mediante tecnología accesible.
+      </p>
     </section>
 
-    <section>
-      <h2>Visión</h2>
-      <p>Queremos crear una comunidad conectada y protegida, donde la tecnología y la interacción social se unan para prevenir delitos y mejorar la calidad de vida.</p>
+    <section class="seccion-mision">
+      <h2 class="titulo-secundario">Nuestra misión</h2>
+      <p class="texto-intro">
+        La aplicación busca fortalecer la seguridad ciudadana mediante la participación activa de los vecinos, ofreciendo herramientas innovadoras como mapas interactivos de sucesos y acceso directo a números de emergencia.
+      </p>
+      <figure class="imagen-mision">
+        <img src="../imagenes/nuestra-mision.webp" alt="Imagen representativa de la misión">
+        <figcaption>Representación de la misión del proyecto.</figcaption>
+      </figure>
     </section>
 
-    <figure>
-      <img src="../imagenes/mapa-delictual.webp" alt="Mapa de seguridad ciudadana">
-      <figcaption>Representación de la seguridad comunit
+    <section class="seccion-vision">
+      <h2 class="titulo-secundario">Visión</h2>
+      <p class="texto-intro">
+        Queremos crear una comunidad conectada y protegida, donde la tecnología y la interacción social se unan para prevenir delitos y mejorar la calidad de vida.
+      </p>
+      <figure class="imagen-vision">
+        <img src="../imagenes/vision.jpg" alt="Imagen representativa de la visión">
+        <figcaption>Representación de la visión del proyecto.</figcaption>
+      </figure>
+    </section>
+  </main>
 
+  <!-- Pie de página -->
+  <footer class="footer-principal">
+    <p class="footer-texto">© 2026 - Proyecto Final</p>
+  </footer>
+</body>
+</html>
