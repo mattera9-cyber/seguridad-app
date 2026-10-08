@@ -4,70 +4,64 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citizen App - Inicio</title>
-  <!-- Vinculación a hoja de estilos -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
-  <!-- Tipografía externa con fallback -->
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Encabezado principal -->
-  <header class="header-principal">
-    <nav class="nav-bar">
-      <div class="logo">Citizen App</div>
-      <ul class="nav-list">
-        <li><a href="index.html">Inicio</a></li>
-        <li><a href="pages/sobre-mi.html">Sobre mí</a></li>
-        <li><a href="pages/proyectos.html">Proyectos</a></li>
-        <li><a href="pages/servicios.html">Servicios</a></li>
-        <li><a href="pages/contacto.html">Contacto</a></li>
-        <li><a href="pages/faq.html">FAQ</a></li>
-      </ul>
-    </nav>
-  </header>
+  <!-- Navbar Bootstrap -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">Citizen App</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/sobre-mi.html">Sobre mí</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/proyectos.html">Proyectos</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/servicios.html">Servicios</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="pages/faq.html">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <!-- Contenido principal -->
   <main class="main-contenido">
     <section class="seccion-intro">
       <h1 class="titulo-principal">Seguridad Ciudadana App</h1>
-      <p class="texto-intro">
-        Una plataforma innovadora que combina seguridad ciudadana con interacción social. Los usuarios pueden crear y compartir sucesos relacionados con delitos, visualizar mapas interactivos y acceder a herramientas de inteligencia artificial para prevenir riesgos.
-      </p>
+      <p class="texto-intro">Una plataforma innovadora que combina seguridad ciudadana con interacción social.</p>
     </section>
 
-    <section class="seccion-destacados">
-      <h2 class="titulo-secundario">Funciones principales</h2>
-
-      <article class="destacado-item">
-        <h3>Mapa interactivo de sucesos</h3>
-        <p>Visualización de incidentes en tiempo real para mejorar la respuesta comunitaria.</p>
-      </article>
-
-      <article class="destacado-item">
-        <h3>Acceso directo a números de emergencia</h3>
-        <p>Conexión rápida con servicios de seguridad y asistencia.</p>
-      </article>
-
-      <article class="destacado-item">
-        <h3>Almacenamiento seguro de documentos</h3>
-        <p>Protección de información relevante para denuncias y reportes.</p>
-      </article>
-
-      <article class="destacado-item">
-        <h3>Predicción de delitos</h3>
-        <p>Herramientas de análisis para anticipar riesgos y mejorar la prevención.</p>
-      </article>
-
-      <figure class="imagen-inicio">
-        <img src="imagenes/mapa-delictual.webp" alt="Mapa interactivo de seguridad ciudadana">
-        <figcaption>Mapa interactivo de seguridad ciudadana.</figcaption>
-      </figure>
+    <!-- Carousel principal -->
+    <section class="seccion-galeria">
+      <h2 class="titulo-secundario">Galería</h2>
+      <div id="carouselInicio" class="carousel slide">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="imagenes/galeria1.webp" class="d-block w-100" alt="Imagen 1">
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/galeria2.webp" class="d-block w-100" alt="Imagen 2">
+          </div>
+          <div class="carousel-item">
+            <img src="imagenes/galeria3.webp" class="d-block w-100" alt="Imagen 3">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
     </section>
   </main>
 
-  <!-- Pie de página -->
   <footer class="footer-principal">
     <p class="footer-texto">© 2026 - Proyecto Final</p>
   </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
