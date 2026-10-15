@@ -28,40 +28,56 @@
     </div>
   </nav>
 
+  <!-- Contenido principal -->
   <main class="main-contenido">
     <section class="seccion-intro">
       <h1 class="titulo-principal">Seguridad Ciudadana App</h1>
       <p class="texto-intro">Una plataforma innovadora que combina seguridad ciudadana con interacción social.</p>
     </section>
 
-    <!-- Carousel principal -->
+    <!-- Carrusel principal con tres imágenes -->
     <section class="seccion-galeria">
-      <h2 class="titulo-secundario">Galería</h2>
-      <div id="carouselInicio" class="carousel slide">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="imagenes/galeria1.webp" class="d-block w-100" alt="Imagen 1">
-          </div>
-          <div class="carousel-item">
-            <img src="imagenes/galeria2.webp" class="d-block w-100" alt="Imagen 2">
-          </div>
-          <div class="carousel-item">
-            <img src="imagenes/galeria3.webp" class="d-block w-100" alt="Imagen 3">
-          </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon"></span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
-          <span class="carousel-control-next-icon"></span>
-        </button>
-      </div>
+      <h2 class="titulo-secundario">Imágenes de inicio</h2>
+      <div id="carouselInicio" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+  <!-- Indicadores (los puntitos abajo) -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Imagen 1"></button>
+    <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="1" aria-label="Imagen 2"></button>
+    <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="2" aria-label="Imagen 3"></button>
+  </div>
+
+  <!-- Imágenes -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="imagenes/inicio1.png" class="d-block w-100" alt="Imagen 1">
+    </div>
+    <div class="carousel-item">
+      <img src="imagenes/inicio2.webp" class="d-block w-100" alt="Imagen 2">
+    </div>
+    <div class="carousel-item">
+      <img src="imagenes/inicio3.webp" class="d-block w-100" alt="Imagen 3">
+    </div>
+  </div>
+
+  <!-- Botones de navegación -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselInicio" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Anterior</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselInicio" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Siguiente</span>
+  </button>
+</div>
+
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="footer-principal">
     <p class="footer-texto">© 2026 - Proyecto Final</p>
   </footer>
+  <!-- Script de Bootstrap al final del body -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

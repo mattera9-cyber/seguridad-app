@@ -37,7 +37,7 @@ body {
 }
 
 /* =========================
-   Navegación (Bootstrap Navbar)
+   Navbar
    ========================= */
 .navbar-brand {
   font-family: 'Abel', sans-serif;
@@ -51,7 +51,6 @@ body {
   color: #F5F5F5 !important;
 }
 
-/* Estados interactivos en navbar */
 .nav-link:hover,
 .nav-link:focus,
 .nav-link:active {
@@ -67,7 +66,7 @@ body {
   display: grid;
   grid-template-areas:
     "intro"
-    "destacados";
+    "galeria";
   grid-template-columns: 1fr;
   gap: 20px;
 }
@@ -76,75 +75,49 @@ body {
   grid-area: intro;
 }
 
-.seccion-destacados {
-  grid-area: destacados;
-  display: grid;
-  grid-template-areas:
-    "titulo"
-    "items"
-    "imagen";
-  grid-template-columns: 1fr;
-  gap: 20px;
-}
-
-.seccion-destacados .titulo-secundario {
-  grid-area: titulo;
-}
-
-.destacado-item {
-  grid-area: items;
-  padding: 20px;
-  background-color: #111;
-  border-radius: 8px;
+.seccion-galeria {
+  grid-area: galeria;
 }
 
 /* =========================
-   Estados interactivos en tarjetas
+   Carrusel
    ========================= */
-.destacado-item,
-.proyecto-item,
-.servicio-item,
-.faq-item {
-  display: inline-block; /* necesario para que el transform funcione */
-  transition: transform 0.3s ease;
-}
-
-.destacado-item:hover,
-.proyecto-item:hover,
-.servicio-item:hover,
-.faq-item:hover {
-  transform: scale(1.02);
-}
-
-/* =========================
-   Imágenes
-   ========================= */
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-.imagen-inicio img,
-.imagen-proyecto img,
-.imagen-contacto img,
-.imagen-sobre-mi img {
+.carousel-item img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
 }
 
-/* =========================
-   Carousel Bootstrap
-   ========================= */
-.carousel-item img {
-  border-radius: 8px;
+/* Botones del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.8;
 }
 
-/* Estados interactivos en controles del carousel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 50%;
+}
+
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  opacity: 0.8;
+  opacity: 1;
   transition: opacity 0.3s ease;
+}
+
+/* Indicadores (puntitos) */
+.carousel-indicators [data-bs-target] {
+  background-color: #E50914;
+}
+
+.carousel-indicators .active {
+  background-color: #fff;
 }
 
 /* =========================
@@ -168,16 +141,445 @@ img {
   .main-contenido {
     grid-template-areas:
       "intro"
-      "destacados"; /* mantiene el orden vertical */
+      "galeria";
     grid-template-columns: 1fr;
   }
 
-  .seccion-destacados {
-    grid-template-areas:
-      "titulo"
-      "items"
-      "imagen"; /* también vertical */
-    grid-template-columns: 1fr;
+  .carousel-item img {
+    height: 600px;
   }
 }
+
+/* =========================
+   Sección Sobre mí
+   ========================= */
+.seccion-sobre-mi {
+  display: grid;
+  grid-template-areas:
+    "titulo"
+    "contenido"
+    "imagen";
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.seccion-sobre-mi .titulo-principal { grid-area: titulo; }
+.seccion-sobre-mi .texto-intro { grid-area: contenido; }
+.seccion-sobre-mi .imagen-sobre-mi { grid-area: imagen; }
+
+/* Imagen adaptable */
+.imagen-sobre-mi img {
+  width: 100%;          /* ocupa todo el ancho disponible */
+  height: auto;         /* mantiene proporción */
+  max-width: 841px;     /* evita que se estire más de su tamaño real */
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+/* Desktop: redistribución en columnas */
+@media (min-width: 1024px) {
+  .seccion-sobre-mi {
+    grid-template-areas:
+      "titulo titulo"
+      "contenido imagen";
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+/* =========================
+   Sección Proyectos
+   ========================= */
+.seccion-proyectos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.proyecto-item {
+  text-align: center;
+  max-width: 900px;
+}
+
+.imagen-proyecto img {
+  width: 100%;
+  height: auto;
+  max-width: 700px;
+  display: block;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+/* Desktop: redistribución en columnas */
+@media (min-width: 1024px) {
+  .seccion-proyectos {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .proyecto-item {
+    flex: 1 1 45%;
+    max-width: 500px;
+  }
+
+  .imagen-proyecto img {
+    max-width: 400px;
+  }
+}
+
+
+/* =========================
+   Sección Servicios
+   ========================= */
+.contenedor-servicios {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: una columna */
+  gap: 20px;
+}
+
+.servicio-item {
+  text-align: center;
+  padding: 15px;
+}
+
+.servicio-item img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;   /* evita que se agrande demasiado */
+  display: block;
+  margin: 0 auto 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+/* Desktop: redistribución en columnas */
+@media (min-width: 1024px) {
+  .contenedor-servicios {
+    grid-template-columns: repeat(3, 1fr); /* tres columnas */
+  }
+}
+/* =========================
+   Sección FAQ
+   ========================= */
+.seccion-faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+  padding: 20px;
+}
+
+.faq-imagen img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* tamaño controlado */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.faq-texto {
+  text-align: left;
+  max-width: 900px;
+}
+
+/* Desktop: redistribución en columnas */
+@media (min-width: 1024px) {
+  .seccion-faq {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .faq-imagen {
+    flex: 1;
+  }
+
+  .faq-texto {
+    flex: 2;
+  }
+
+  .faq-imagen img {
+    max-width: 350px;
+    margin-right: 40px;
+  }
+}
+/* =========================
+   Sección Contacto
+   ========================= */
+.seccion-contacto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.contacto-contenido {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.contacto-imagen img {
+  width: 100%;
+  height: auto;
+  max-width: 400px; /* tamaño controlado */
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.contacto-texto {
+  text-align: left;
+  max-width: 900px;
+}
+
+/* Desktop: redistribución en columnas */
+@media (min-width: 1024px) {
+  .contacto-contenido {
+    grid-template-columns: 1fr 2fr; /* imagen a la izquierda, texto a la derecha */
+    align-items: center;
+  }
+
+  .contacto-imagen img {
+    max-width: 350px;
+    margin-right: 40px;
+  }
+}
+/* =========================
+   Imagen de Contacto (ajuste de tamaño)
+   ========================= */
+.seccion-contacto img {
+  width: 100%;
+  height: auto;
+  max-width: 700px; /* limita el ancho máximo */
+  display: block;
+  margin: 20px auto; /* centra la imagen */
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+  object-fit: cover; /* recorta sin deformar */
+}
+/* =========================
+  /* =========================
+   Sección FAQ (idéntica a Contacto)
+   ========================= */
+.seccion-faq {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.faq-contenido {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: una columna */
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.faq-imagen img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+  object-fit: cover;
+}
+
+.faq-texto {
+  max-width: 700px;
+  text-align: left;
+}
+
+/* Desktop: dos columnas lado a lado */
+@media (min-width: 1024px) {
+  .faq-contenido {
+    grid-template-columns: 1fr 1fr; /* imagen izquierda, texto derecha */
+    text-align: left;
+  }
+
+  .faq-imagen {
+    justify-self: center;
+  }
+
+  .faq-texto {
+    justify-self: start;
+  }
+}
+/* =========================
+   Sección Sobre mí (idéntica a Contacto)
+   ========================= */
+.seccion-sobre-mi {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.sobre-mi-contenido {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: una columna */
+  gap: 20px;
+  align-items: center;
+}
+
+.sobre-mi-imagen img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.sobre-mi-texto {
+  text-align: left;
+  max-width: 900px;
+}
+
+/* Desktop: redistribución en columnas */
+@media (min-width: 1024px) {
+  .sobre-mi-contenido {
+    grid-template-columns: 1fr 2fr; /* texto izquierda, imagen derecha */
+    align-items: center;
+  }
+
+  .sobre-mi-imagen img {
+    max-width: 350px;
+    margin-left: 40px;
+  }
+}
+/* =========================
+   Corrección de alineación en Sobre mí
+   ========================= */
+.sobre-mi-contenido {
+  display: grid;
+  grid-template-columns: 1fr 2fr; /* imagen izquierda, texto derecha */
+  align-items: center; /* centra verticalmente ambos elementos */
+  gap: 40px; /* separa imagen y texto */
+  padding: 20px 0;
+}
+
+.sobre-mi-imagen img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.4);
+}
+
+.sobre-mi-texto {
+  text-align: left;
+  max-width: 700px;
+  line-height: 1.6; /* mejora legibilidad */
+}
+
+/* Mobile: apila imagen y texto */
+@media (max-width: 768px) {
+  .sobre-mi-contenido {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .sobre-mi-texto {
+    text-align: center;
+  }
+}
+/* =========================
+   Sección Proyectos (idéntica a Servicios)
+   ========================= */
+.contenedor-proyectos {
+  display: grid;
+  grid-template-columns: 1fr; /* mobile: una columna */
+  gap: 20px;
+}
+
+.proyecto-item {
+  text-align: center;
+  padding: 15px;
+}
+
+.proyecto-item img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  display: block;
+  margin: 0 auto 15px auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+/* Desktop: tres columnas lado a lado */
+@media (min-width: 1024px) {
+  .contenedor-proyectos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Estados interactivos */
+.nav-link:hover,
+.nav-link:focus,
+.nav-link:active {
+  color: #E50914 !important;
+  transition: color 0.3s ease;
+}
+
+.servicio-item img:hover,
+.proyecto-item img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+button:hover,
+button:focus {
+  background-color: #E50914;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+/* Estados interactivos */
+.card:hover {
+  transform: scale(1.03);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 15px rgba(229, 9, 20, 0.6);
+}
+
+button:hover,
+button:focus {
+  background-color: #E50914;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+#carouselProyectos img {
+  height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(229, 9, 20, 0.4);
+}
+
+@media (min-width: 1024px) {
+  #carouselProyectos img {
+    height: 600px;
+  }
+}
+
 
