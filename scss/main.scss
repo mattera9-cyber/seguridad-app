@@ -1,0 +1,12 @@
+@use "utilities/variables" as *;
+@use "utilities/mixins";
+@use "base/base";
+@use "base/tipografia";
+@use "layout/header";
+@use "layout/footer";
+@use "layout/nav";
+@use "components/buttons";
+@use "components/cards";
+body {
+  background-color: #f0f0f0;
+}
