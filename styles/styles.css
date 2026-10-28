@@ -354,3 +354,60 @@ button:focus {
 @media (min-width: 1024px) {
   .carousel-item img { height: 600px; }
 }
+/* ===== Responsive completo ===== */
+
+/* Mobile-first: ya está por defecto (375px aprox) */
+
+/* Tablet (>=768px) */
+@media (min-width: 768px) {
+  /* Sobre mí y FAQ: imagen + texto en dos columnas */
+  .sobre-mi-contenido,
+  .faq-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 2rem;
+    text-align: left;
+  }
+
+  /* Contacto: imagen + texto en dos columnas */
+  .contacto-contenido {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  /* Servicios: cards en 2 columnas */
+  .seccion-servicios .row {
+    justify-content: center;
+  }
+
+  /* Proyectos: artículos en 2 columnas */
+  .seccion-proyectos .row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Desktop (>=1024px) */
+@media (min-width: 1024px) {
+  /* Servicios: cards en 3 columnas */
+  .seccion-servicios .row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+
+  /* Proyectos: artículos en 3 columnas */
+  .seccion-proyectos .row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* FAQ y Sobre mí: más espacio entre columnas */
+  .sobre-mi-contenido,
+  .faq-contenido {
+    gap: 3rem;
+  }
+}

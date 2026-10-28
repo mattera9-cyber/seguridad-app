@@ -6,6 +6,9 @@
   <title>Citizen App - Inicio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/styles.css">
+
+  <!-- Librería de animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
   <!-- Navbar Bootstrap -->
@@ -31,11 +34,11 @@
   <!-- Contenido principal -->
   <main class="main-contenido">
     <section class="seccion-intro">
-      <h1 class="titulo-principal">Seguridad Ciudadana App</h1>
-      <p class="texto-intro">Una plataforma innovadora que combina seguridad ciudadana con interacción social.</p>
+      <h1 class="titulo-principal" data-aos="fade-down" data-aos-duration="1200">Seguridad Ciudadana App</h1>
+      <p class="texto-intro" data-aos="fade-up" data-aos-duration="1200">Una plataforma innovadora que combina seguridad ciudadana con interacción social.</p>
     </section>
 
-    <!-- Carrusel principal -->
+    <!-- Carrusel principal con animación AOS -->
     <section class="seccion-galeria">
       <h2 class="titulo-secundario">Imágenes de inicio</h2>
       <div id="carouselInicio" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
@@ -47,15 +50,15 @@
           <button type="button" data-bs-target="#carouselInicio" data-bs-slide-to="2" aria-label="Imagen 3"></button>
         </div>
 
-        <!-- Slides -->
+        <!-- Slides con animación -->
         <div class="carousel-inner">
-          <div class="carousel-item active">
+          <div class="carousel-item active" data-aos="zoom-in" data-aos-duration="1000">
             <img src="imagenes/inicio1.png" class="d-block w-100" alt="Imagen 1">
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
             <img src="imagenes/inicio2.webp" class="d-block w-100" alt="Imagen 2">
           </div>
-          <div class="carousel-item">
+          <div class="carousel-item" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
             <img src="imagenes/inicio3.webp" class="d-block w-100" alt="Imagen 3">
           </div>
         </div>
@@ -80,5 +83,11 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script de inicialización de AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
