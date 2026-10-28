@@ -1,0 +1,28 @@
+.btn-custom {
+  background: $color-primario;
+  border-radius: $radio-borde;
+  color: white;
+  &:hover { opacity: 0.9; }
+}
+.btn {
+  @extend .btn-base;
+  background: $color-primario;
+  color: white;
+  transition: background 0.3s ease, transform 0.3s ease;
+
+  &:hover {
+    background: darken($color-primario, 10%);
+    transform: scale(1.05);
+  }
+}
+.btn-base {
+  padding: 10px 20px;
+  border-radius: $radio-borde;
+  font-weight: bold;
+}
+
+.btn-secondary {
+  @extend .btn-base;
+  background: $color-texto;
+  color: white;
+}

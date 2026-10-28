@@ -4,10 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Citizen App - Servicios</title>
-  <!-- Bootstrap CDN -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="../styles/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Abel&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Librería de animación AOS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
 </head>
 <body>
   <!-- Navbar Bootstrap -->
@@ -34,24 +35,38 @@
   <main class="main-contenido">
     <section class="seccion-servicios container">
       <h1 class="titulo-principal">Servicios</h1>
-      <div class="contenedor-servicios mt-4">
-        <article class="servicio-item">
-          <h2 class="titulo-secundario">Alertas comunitarias</h2>
-          <p class="texto-intro">Notificaciones inmediatas sobre situaciones de riesgo en tu zona.</p>
-          <img src="../imagenes/alertascomunitarias.png" alt="Alertas comunitarias">
-        </article>
 
-        <article class="servicio-item">
-          <h2 class="titulo-secundario">Mapa interactivo</h2>
-          <p class="texto-intro">Visualización en tiempo real de incidentes reportados por los vecinos.</p>
-          <img src="../imagenes/servicio2.png" alt="Mapa interactivo">
-        </article>
+      <!-- Cards de Bootstrap con animación AOS -->
+      <div class="row mt-4 justify-content-center">
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1000">
+          <div class="card bg-dark text-white border-danger h-100">
+            <img src="../imagenes/alertascomunitarias.png" class="card-img-top" alt="Alertas comunitarias">
+            <div class="card-body">
+              <h5 class="card-title text-danger">Alertas comunitarias</h5>
+              <p class="card-text">Notificaciones inmediatas sobre situaciones de riesgo en tu zona.</p>
+            </div>
+          </div>
+        </div>
 
-        <article class="servicio-item">
-          <h2 class="titulo-secundario">Acceso rápido a emergencias</h2>
-          <p class="texto-intro">Botones directos para llamar a policía, bomberos y servicios médicos.</p>
-          <img src="../imagenes/servicio3.png" alt="Acceso rápido a emergencias">
-        </article>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+          <div class="card bg-dark text-white border-danger h-100">
+            <img src="../imagenes/mapainteractivo.jpg" class="card-img-top" alt="Mapa interactivo">
+            <div class="card-body">
+              <h5 class="card-title text-danger">Mapa interactivo</h5>
+              <p class="card-text">Visualización en tiempo real de incidentes reportados por los vecinos.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+          <div class="card bg-dark text-white border-danger h-100">
+            <img src="../imagenes/emergencia.jpg" class="card-img-top" alt="Acceso rápido a emergencias">
+            <div class="card-body">
+              <h5 class="card-title text-danger">Acceso rápido a emergencias</h5>
+              <p class="card-text">Botones directos para llamar a policía, bomberos y servicios médicos.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -63,5 +78,11 @@
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Script de inicialización de AOS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
 </body>
 </html>
